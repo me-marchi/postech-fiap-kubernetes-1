@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3040:3000"
+    networks:
+      - my-network
+
+  redis-server:
+    image: 'redis'
+    command: redis-server
+    ports:
+      - '6379:6379'
+    networks:
+      - my-network
+
+networks:
+  - my-network

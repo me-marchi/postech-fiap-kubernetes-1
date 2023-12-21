@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fiap-nodeapi
+  labels:
+    app: fiap-nodeapi
+spec:
+  containers:
+    - name: fiap-nodeapi
+      image: memarchi/fiap-api:1.0.0
+      ports:
+        - containerPort: 3000
